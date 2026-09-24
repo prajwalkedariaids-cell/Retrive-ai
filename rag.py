@@ -1,8 +1,4 @@
-"""Core RAG logic: file ingestion, retrieval and streaming answers.
 
-Stack: LangChain + Groq (chat LLM) + local HuggingFace embeddings + FAISS.
-Sessions are kept in memory, keyed by a session id sent from the browser.
-"""
 
 import os
 import tempfile
@@ -25,8 +21,6 @@ from langchain_groq import ChatGroq
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-# Groq model names change over time - see https://console.groq.com/docs/models
-# Use the requested model as the default choice for chat requests.
 GROQ_MODELS = ["openai/gpt-oss-20b", "openai/gpt-oss-120b", "qwen/qwen3.8-27b"]
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 MAX_HISTORY_MESSAGES = 6
